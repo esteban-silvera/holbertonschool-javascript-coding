@@ -18,15 +18,15 @@ app.get('/students', async (_req, res) => {
         0,
       );
       res.write(`Number of students: ${total}\n`);
-    for (let i = 0; i < fields.length; i += 1) {
-      res.write(
-        `Number of students in ${fields[i]}: ${
-          data[fields[i]].numStudents
-        }. `,
-      );
-      res.write(`List: ${data[fields[i]].names.join(', ')}`);
-      if (i < fields.length - 1) {
-        res.write('\n');
+      for (let i = 0; i < fields.length; i += 1) {
+        res.write(
+          `Number of students in ${fields[i]}: ${
+            data[fields[i]].numStudents
+          }. `,
+        );
+        res.write(`List: ${data[fields[i]].names.join(', ')}`);
+        if (i < fields.length - 1) {
+          res.write('\n');
       }
     }
   })
