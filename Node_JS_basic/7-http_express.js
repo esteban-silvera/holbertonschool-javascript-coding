@@ -27,15 +27,15 @@ app.get('/students', async (_req, res) => {
         res.write(`List: ${data[fields[i]].names.join(', ')}`);
         if (i < fields.length - 1) {
           res.write('\n');
+        }
       }
-    }
-  })
-  .catch((err) => {
-    res.write(err.message);
-  })
-  .finally(() => {
-    res.end();
-  });
+    })
+    .catch((err) => {
+      res.write(err.message);
+    })
+    .finally(() => {
+      res.end();
+    });
 });
 app.listen(port);
 
